@@ -1,0 +1,10 @@
+# AurexMC Network - Lobby
+# Este archivo activa el "modern forwarding" con Velocity.
+# El instalador (INSTALL-AurexMC.bat) reemplaza el valor de
+# "secret" por la clave real generada en Velocity/forwarding.secret.
+# Paper completa el resto de valores por defecto en el primer arranque.
+proxies:
+  velocity:
+    enabled: true
+    online-mode: false
+    secret: 'PENDIENTE_DE_INSTALACION'

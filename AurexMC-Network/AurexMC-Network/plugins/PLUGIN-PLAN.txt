@@ -1,0 +1,89 @@
+====================================================
+  AUREXMC NETWORK - PLAN DE PLUGINS
+====================================================
+
+Este archivo explica, para cada plugin de la lista base,
+si el instalador (INSTALL-AurexMC.bat / Install-Network.ps1)
+puede descargarlo automaticamente y de donde, o si debes
+descargarlo tu mismo a mano porque no existe una fuente
+oficial con API fiable.
+
+REGLA QUE SIGUE EL INSTALADOR:
+No se inventan URLs de descarga. Si una fuente oficial con
+API fiable no existe o falla, el plugin se queda SIN
+descargar y aparece marcado como "MANUAL" en este archivo
+y en el log de instalacion. Nunca se coloca un archivo
+falso con extension .jar.
+
+----------------------------------------------------
+DESCARGA AUTOMATICA (via Hangar, repositorio oficial
+de PaperMC: https://hangar.papermc.io)
+----------------------------------------------------
+
+Estos plugins tienen pagina oficial en Hangar y el
+instalador intenta descargar su ultima version estable
+para la plataforma PAPER. Si Hangar no responde o cambia
+su API, el instalador NO falla en silencio: te avisa y
+deja el plugin sin instalar (lo tendras que poner a mano).
+
+  - LuckPerms      -> Lobby y Survival
+    https://hangar.papermc.io/LuckPerms/LuckPerms
+
+  - EssentialsX    -> Survival (opcionalmente Lobby)
+    https://hangar.papermc.io/EssentialsX/Essentials
+
+  - ViaVersion     -> Velocity, Lobby y Survival
+    https://hangar.papermc.io/ViaVersion/ViaVersion
+
+  - WorldEdit      -> Survival
+    https://hangar.papermc.io/EngineHub/WorldEdit
+
+  - WorldGuard     -> Survival
+    https://hangar.papermc.io/EngineHub/WorldGuard
+
+  - CoreProtect    -> Survival
+    https://hangar.papermc.io/Intelli/CoreProtect
+
+  - spark          -> Lobby y Survival (profiler de rendimiento)
+    https://hangar.papermc.io/aikar/spark
+
+----------------------------------------------------
+INSTALACION MANUAL OBLIGATORIA
+----------------------------------------------------
+
+Estos dos plugins no publican de forma oficial en Hangar
+con una API de descarga directa fiable en el momento de
+crear este instalador (suelen distribuirse solo mediante
+la pagina de descargas de SpigotMC, que no ofrece una API
+publica de descarga automatizada). Para no inventar una URL
+que podria romperse o no corresponder al archivo real, este
+instalador NO los descarga automaticamente.
+
+  - PlaceholderAPI
+    1) Entra en: https://www.spigotmc.org/resources/placeholderapi.6245/
+    2) Descarga el .jar mas reciente.
+    3) Copialo dentro de: Lobby\plugins\ y Survival\plugins\
+
+  - DeluxeMenus
+    1) Entra en: https://www.spigotmc.org/resources/deluxemenus.11734/
+    2) Descarga el .jar mas reciente.
+    3) Copialo dentro de: Lobby\plugins\ (o donde lo necesites)
+
+----------------------------------------------------
+NOTAS IMPORTANTES
+----------------------------------------------------
+
+* PlaceholderAPI suele requerir ejecutar dentro del
+  servidor el comando:  /papi ecloud download <expansion>
+  para instalar "expansiones" adicionales una vez el
+  plugin ya esta cargado.
+
+* WorldEdit y WorldGuard dependen entre si: instala
+  siempre WorldEdit antes que WorldGuard.
+
+* LuckPerms solo necesita instalarse una vez por servidor
+  (Lobby y Survival), no en Velocity.
+
+* Revisa el archivo de log que crea el instalador
+  (tools\install-log.txt) para ver exactamente que se
+  descargo, que version y que quedo pendiente.
